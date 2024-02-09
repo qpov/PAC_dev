@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "PAC",
+  "description": "Price autio changer",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "pac.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
