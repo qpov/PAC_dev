@@ -1,0 +1,28 @@
+.content {
+
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header > p {
+    margin-left: 5px;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.main {
+    align-items: center;
+    display: flex;
+    white-space: nowrap;
+}
+
+.text {
+    margin-left: 5px;
+}
+
+.result {
+    margin-left: 5px;
+}
