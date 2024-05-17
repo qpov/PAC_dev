@@ -1,12 +1,2 @@
 # PAC - Price auto changer
-Расширение для omarket.kz
-
-**Как установить?**
-1. Скачайте "PAC.7z" в [Releases](https://github.com/qpov/PAC/releases).
-2. Разархивируйте скачанный файл.
-3. Откройте вкладку расширения в Chrome.
-4. В правом верхнем углу включите режим разработчика.
-5. Нажмите кнопку «Загрузить распакованное расширение» в левом верхнем углу.
-6. Выберите разархивированную папку «PAC» и нажмите «Выбрать папку».
----
-![pac](https://github.com/qpov/PAC/assets/52863424/b2d5f30b-2a8c-426a-b87b-9c970b8d6484)
+В данный момент, расширение можно установить только из официального - [Chrome Web Store](https://chromewebstore.google.com/detail/pac/lhmgddamnhokmphomnnfagdgncljikfp?hl)
