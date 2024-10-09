@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Настройки - PAC</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+    <div class="header">
+        <button data-tab="general-settings">Общие настройки</button>
+        <button data-tab="price-outbidding">Перебивание цен</button>
+        <button data-tab="issuing-wholesale-offers">Выставление оптовых предложений</button>
+    </div>
+    <div class="tab-content">
+
+        <div id="general-settings" class="general-settings">
+            <div class="slider-container">
+                <h3>Debug mode</h3>
+                <label class="switch">
+                    <input type="checkbox" id="debug-mode">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div id="price-outbidding" class="price-outbidding" style="display: none;">
+            <div class="companies-you-cant-interrupt">
+                <h3>Компании которых не перебивать</h3>
+                <div class="input-and-button">
+                    <input type="text" placeholder="Введите название компании">
+                    <button>Добавить</button>
+                </div>
+                <div class="companies-list">
+                    <!-- Здесь список сохранённых компаний -->
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="brands-that-wont-change-their-price">
+                <h3>Бренды которым не менять цену</h3>
+                <div class="input-and-button">
+                    <input type="text" placeholder="Введите название бренда">
+                    <button>Добавить</button>
+                </div>
+                <div class="brands-list">
+                    <!-- Здесь список сохранённых брендов -->
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="minimum-price">
+                <h3>Минимальная цена, при которой не перебивать</h3>
+                <div class="input-and-button">
+                    <input type="number" value="0" min="0" placeholder="Введите минимальную цену">
+                    <button>Сохранить</button>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="price-difference">
+                <h3>Ставить цену в Кенесары ниже чем в Астане</h3>
+                <div class="input-and-button">
+                    <input type="number" value="0" min="0" placeholder="Введите разницу в цене">
+                    <button>Сохранить</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="issuing-wholesale-offers" class="issuing-wholesale-offers" style="display: none;">
+        </div>
+    </div>
+    <script src="settings.js"></script>
+</body>
+
+</html>

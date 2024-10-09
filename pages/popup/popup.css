@@ -1,0 +1,147 @@
+/* Корневые переменные для цветов и размеров */
+:root {
+    /* Размеры */
+    --font-size: 1rem;
+    --container-padding: 1.25rem; /* 20px */
+    --button-padding: 0.625rem 1.25rem; /* 10px 20px */
+    --button-font-size: 0.875rem; /* 14px */
+    --slider-width: 21rem; /* Изменённая ширина */
+    --slider-height: 1.6rem; /* 24px */
+    --slider-knob-size: 1.25rem; /* 20px */
+    --margin-bottom: 1.25rem; /* 20px */
+    --gap: 0.625rem; /* 10px */
+
+    /* Цвета */
+    --background-color: #ffffff; /* Белый фон */
+    --text-color: #000000; /* Чёрный текст */
+
+    /* Кнопки */
+    --button-bg-color: #000000; /* Чёрный */
+    --button-bg-hover-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный чёрный при наведении */
+    --button-text-color: #ffffff; /* Белый текст */
+
+    /* Переключатель */
+    --switch-bg-off: #000000; /* Чёрный фон выключенного состояния */
+    --switch-bg-on: #ffffff; /* Белый фон при включении */
+
+    /* Переходы */
+    --transition-duration: 0.5s; /* Для всех переходов */
+    --slider-transition: 0.5s; /* Для переключателя */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    width: min-content; /* Автоматическая ширина под содержимое */
+    padding: var(--container-padding);
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Стили для переключателя */
+.switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: var(--margin-bottom);
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    width: var(--slider-width);
+    height: var(--slider-height);
+    background-color: var(--switch-bg-off); /* Чёрный фон в выключенном состоянии */
+    border: 0.1rem solid #000000; /* Чёрная обводка */
+    border-radius: 1.875rem; /* 30px для плавного закругления */
+    position: relative;
+    transition: background-color var(--transition-duration); /* Плавный переход цвета фона */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрирование текста по горизонтали */
+    padding: 0 0.5rem; /* Горизонтальные отступы для текста */
+    overflow: hidden; /* Чтобы текст не выходил за пределы переключателя */
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: var(--slider-knob-size);
+    height: var(--slider-knob-size);
+    left: 0.125rem; /* Начальная позиция слева */
+    top: 50%; /* Центр по вертикали */
+    transform: translateY(-50%) translateX(0); /* Центрирование по вертикали и отсутствие смещения по горизонтали */
+    background-color: #ffffff; /* Белый слайдер в выключенном состоянии */
+    border-radius: 50%;
+    transition: transform var(--slider-transition); /* Плавный переход позиции */
+}
+
+input:checked + .slider {
+    background-color: var(--switch-bg-on); /* Белый фон при включении */
+}
+
+input:checked + .slider::before {
+    transform: translateY(-50%) translateX(calc(var(--slider-width) - var(--slider-knob-size) - 0.4rem)); /* Переход вправо с учётом 0.4rem */
+    background-color: #000000; /* Чёрный слайдер при включении */
+}
+
+#toggle-text {
+    font-size: var(--font-size);
+    user-select: none;
+    color: #ffffff; /* Белый текст при неактивном состоянии */
+    pointer-events: none; /* Чтобы текст не перехватывал клики */
+    transition: color var(--transition-duration);
+    white-space: nowrap; /* Запрет переноса текста */
+    text-align: center; /* Центрирование текста по горизонтали */
+}
+
+.switch input:checked + .slider #toggle-text {
+    color: #000000; /* Чёрный текст при активном состоянии */
+}
+
+.switch input:not(:checked) + .slider #toggle-text {
+    color: #ffffff; /* Белый текст при неактивном состоянии */
+}
+
+/* Удаление эффекта наведения на переключатель */
+/* Нет стилей :hover для .switch */
+
+/* Стили для кнопок */
+.buttons {
+    display: flex;
+    gap: var(--gap);
+}
+
+button {
+    padding: var(--button-padding);
+    font-size: var(--button-font-size);
+    cursor: pointer;
+    border: none;
+    border-radius: 0.25rem; /* 4px */
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    transition: background-color var(--transition-duration); /* Плавный переход цвета фона */
+}
+
+button:hover {
+    background-color: var(--button-bg-hover-color);
+}
+
+button:active {
+    /* Изменение фильтра яркости на 0.5 при нажатии */
+    filter: brightness(0.5);
+}
